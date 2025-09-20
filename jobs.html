@@ -5,7 +5,400 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuantumAxis Engineering - Career Opportunities</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+<style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+      color: #2c3e50;
+      line-height: 1.6;
+      padding-top: 140px; 
+    }
+    
+    /* Header Styles */
+    .main-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      color: white;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      height: 60px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-buttons {
+      display: flex;
+      gap: 5px;
+    }
+    
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.15);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .nav-btn.active {
+      background: rgba(255, 255, 255, 0.25);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .header-logo {
+      height: 50px;
+      width: auto;
+    }
+    
+    .header-center {
+      text-align: center;
+      flex: 1;
+      padding: 0 20px;
+    }
+    
+    .header-center h1 {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+    
+    .header-center p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    
+    .apply-button {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .apply-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      background: linear-gradient(to right, #7bfe91, #5fff7c);
+    }
+    
+    /* Main Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      gap: 30px;
+    }
+    
+    .main-content {
+      flex: 3;
+      min-width: 300px;
+    }
+    
+    .aside-container {
+      flex: 1;
+      min-width: 25%;
+    }
+    
+    /* Section Styles */
+    section {
+      background: white;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+    
+    section:hover {
+      transform: translateY(-5px);
+    }
+    
+    /* Aside Styles */
+    aside {
+      background: linear-gradient(to bottom, #4a6491, #2c3e50);
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border: 3px solid #3498db;
+      position: sticky;
+      top: 100px;
+    }
+    
+    aside h3 {
+      color: #fff;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    
+    aside ul {
+      list-style-type: none;
+      margin-left: 0;
+    }
+    
+    aside li {
+      margin-bottom: 12px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    aside li:before {
+      content: "•";
+      color: #3498db;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 20px;
+    }
+    
+    /* Typography */
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    
+    h2 {
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #3498db;
+      font-size: 1.8rem;
+    }
+    
+    h3 {
+      margin: 20px 0 15px;
+      color: #3498db;
+      font-size: 1.4rem;
+    }
+    
+    h4 {
+      margin: 20px 0 12px;
+      color: #2c3e50;
+      font-size: 1.2rem;
+    }
+    
+    p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    
+    ul, ol {
+      margin-left: 25px;
+      margin-bottom: 25px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    /* Next Button */
+    .next-button-container {
+      text-align: center;
+      margin: 40px 0 30px;
+      clear: both;
+    }
+    
+    .next-button {
+      display: inline-block;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(37, 117, 252, 0.3);
+    }
+    
+    .next-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 117, 252, 0.5);
+      background: linear-gradient(to right, #2575fc, #6a11cb);
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 30px;
+      border-radius: 12px;
+      clear: both;
+    }
+    
+    footer p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+    
+    /* Decorative Elements */
+    .decorative-bar {
+      height: 6px;
+      background: linear-gradient(to right, #6a11cb, #2575fc, #2c3e50);
+      border-radius: 3px;
+      margin: 15px 0 25px;
+    }
+    
+    .highlight {
+      background: linear-gradient(120deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #6a11cb;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      
+      .aside-container {
+        width: 100%;
+      }
+      
+      aside {
+        position: relative;
+        top: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding-top: 160px;
+      }
+      
+      .top-nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 5%;
+        gap: 10px;
+      }
+      
+      .nav-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .nav-btn {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+      }
+      
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+      }
+      
+      .header-center {
+        order: -1;
+        width: 100%;
+      }
+      
+      .header-center h1 {
+        font-size: 1.5rem;
+      }
+      
+      .apply-button {
+        width: 100%;
+        max-width: 250px;
+      }
+      
+      section, aside {
+        padding: 20px;
+      }
+      
+      .header-logo {
+        height: 40px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      body {
+        padding-top: 180px;
+      }
+      
+      .header-center h1 {
+        font-size: 1.4rem;
+      }
+      
+      .header-center p {
+        font-size: 0.9rem;
+      }
+      
+      section, aside {
+        padding: 18px;
+        margin: 15px 0;
+      }
+      
+      ul, ol {
+        margin-left: 20px;
+      }
+      
+      .next-button {
+        padding: 14px 30px;
+        font-size: 1.1rem;
+      }
+      
+      .nav-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+      }
+      
+      .header-logo {
+        height: 35px;
+      }
+    }
+    </style>
 </head>
 <body>
 <header class="main-header">

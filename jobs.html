@@ -147,5 +147,22 @@
     <div class="next-button-container">
       <a href="#" class="next-button">View More Opportunities <i class="fas fa-arrow-right"></i></a>
     </div>
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 QuantumAxis Engineering | All rights reserved</p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple script to handle button active states
+    document.querySelectorAll('.nav-btn').forEach(button => {
+      button.addEventListener('click', function() {
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        this.classList.add('active');
+      });
+    }); 
+  </script>
 </body>
 </html>

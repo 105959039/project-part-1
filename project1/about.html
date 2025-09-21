@@ -229,16 +229,23 @@
         /* Interests Table - Fixed structure */
         .interests {
             overflow-x: auto;
+            display: flex;
+            justify-content: center; /* Center the table */
         }
         
         .interests table {
-            width: 100%;
+            width: 90%;
             border-collapse: collapse;
             margin: 1rem 0;
             background-color: white;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        
+        /* Special row for merged cells */
+
+        .interests .team-skills {
+          background-color: #d4edff;
+          font-weight: bold;
+        }
         .interests caption {
             font-weight: bold;
             font-size: 1.2rem;
